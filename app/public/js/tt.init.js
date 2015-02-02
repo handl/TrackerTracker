@@ -105,6 +105,22 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
+      name: 'Needs Estimate',
+      active: false,
+      filter: function (story) {
+        return TT.Model.Story.hasTag(story, 'needs_estimate');
+      },
+      onDragIn: function (story) {
+        return {
+          labels: TT.Model.Story.addTag(story, 'needs_estimate').labels
+        };
+      },
+      onDragOut: function (story) {
+        return { labels: TT.Model.Story.removeTag(story, 'needs_estimate').labels };
+      }
+    });
+
+    TT.Model.Column.add({
       name: 'Blocked',
       active: false,
       filter: function (story) {
