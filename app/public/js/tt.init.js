@@ -113,7 +113,7 @@ TT.Init = (function () {
       onDragIn: function (story) {
         return {
           labels: TT.Model.Story.addTag(story, 'blocked').labels,
-          owned_by: story.owned_by || TT.Utils.getUsername(),
+          owned_by: story.owned_by || TT.Utils.getUsername()
         };
       },
       onDragOut: function (story) {
