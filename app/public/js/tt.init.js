@@ -105,6 +105,23 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
+      name: 'Blocked',
+      active: false,
+      filter: function (story) {
+        return TT.Model.Story.hasTag(story, 'blocked');
+      },
+      onDragIn: function (story) {
+        return {
+          labels: TT.Model.Story.addTag(story, 'blocked').labels,
+          owned_by: story.owned_by || TT.Utils.getUsername(),
+        };
+      },
+      onDragOut: function (story) {
+        return { labels: TT.Model.Story.removeTag(story, 'blocked').labels };
+      }
+    });
+
+    TT.Model.Column.add({
       name: 'Passed QA',
       active: false,
       filter: function (story) {
