@@ -45,7 +45,7 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
-      name: 'Unstarted',
+      name: 'To Do',
       active: true,
       filter: function (story) {
         return story.current_state === 'unstarted';
@@ -56,7 +56,7 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
-      name: 'Started',
+      name: 'Doing',
       active: true,
       filter: function (story) {
         return story.current_state === 'started';
@@ -71,7 +71,7 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
-      name: 'Finished',
+      name: 'Review',
       active: true,
       filter: function (story) {
         return story.current_state === 'finished';
@@ -139,7 +139,7 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
-      name: 'Delivered',
+      name: 'Dev Done',
       active: true,
       filter: function (story) {
         return story.current_state === 'delivered';
@@ -154,7 +154,7 @@ TT.Init = (function () {
     });
 
     TT.Model.Column.add({
-      name: 'Accepted',
+      name: 'Done Done',
       active: true,
       filter: function (story) {
         return story.current_state === 'accepted';
