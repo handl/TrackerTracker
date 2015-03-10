@@ -44,6 +44,7 @@ TT.Init = (function () {
       }
     });
 
+    /*
     TT.Model.Column.add({
       name: 'To Do',
       active: true,
@@ -54,6 +55,7 @@ TT.Init = (function () {
         return { current_state: 'unstarted' };
       }
     });
+   */
 
     TT.Model.Column.add({
       name: 'Doing',
@@ -201,15 +203,14 @@ TT.Init = (function () {
       }
     });
 
-    /*
     TT.Model.Column.add({
-      name: 'Current',
+      name: 'To Do',
       active: false,
       filter: function (story) {
         return story.current_iteration === 0;
       }
     });
-
+    /*
     TT.Model.Column.add({
       name: 'Backlog',
       active: false,
