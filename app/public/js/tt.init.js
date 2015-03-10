@@ -207,7 +207,7 @@ TT.Init = (function () {
       name: 'To Do',
       active: false,
       filter: function (story) {
-        return story.current_iteration === 0;
+        return story.current_iteration === 0 && story.current_state === 'unstarted';
       }
     });
     /*
